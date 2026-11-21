@@ -1,0 +1,26 @@
+{
+  "_note": "MOCK DATA for development only. Replace with Gouranvi's real extracted data.",
+  "items": [
+    {
+      "id": "mock-001",
+      "title": "Social Media Management",
+      "type": "service",
+      "description": "We plan, design and schedule posts for small businesses across Instagram, Facebook and LinkedIn.",
+      "sourceUrl": "https://example.com/services/social-media"
+    },
+    {
+      "id": "mock-002",
+      "title": "Website Design",
+      "type": "service",
+      "description": "Responsive websites for small businesses, built to load fast and work on phones.",
+      "sourceUrl": "https://example.com/services/web-design"
+    },
+    {
+      "id": "mock-003",
+      "title": "Free Marketing Audit",
+      "type": "offer",
+      "description": "A free review of your current online presence with suggestions for improvement.",
+      "sourceUrl": "https://example.com/offers/audit"
+    }
+  ]
+}
