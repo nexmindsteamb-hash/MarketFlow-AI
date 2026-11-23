@@ -2,12 +2,13 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-
+const socialRoutes = require("./routes/socialRoutes")
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+// Social Media Automation Routes
+app.use("/api/social", socialRoutes);
 app.get("/", (req, res) => {
   res.json({
     success: true,
