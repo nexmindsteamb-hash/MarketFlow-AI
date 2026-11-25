@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const { connectDB } = require("./config/db");
 
 const app = express();
 
@@ -24,6 +25,18 @@ app.get("/api/health", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`MarketFlowAI server running on port ${PORT}`);
+async function start() {
+  if (process.env.MONGO_URI) {
+    await connectDB();
+  } else {
+    console.warn("MONGO_URI is not set: starting without a database.");
+  }
+  app.listen(PORT, () => {
+    console.log(`MarketFlowAI server running on port ${PORT}`);
+  });
+}
+
+start().catch((err) => {
+  console.error("Failed to start server:", err.message);
+  process.exit(1);
 });
